@@ -19,12 +19,15 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-DHAVE_CGI" />
+			<Add option="-DHAVE_TLS" />
+			<Add option="-DHAVE_SHADOW" />
 			<Add directory="/home/Dev/libs/Irrlicht/include" />
 			<Add directory="../" />
 		</Compiler>
 		<Linker>
 			<Add library="crypt" />
 			<Add library="dl" />
+			<Add library="ssl" />
 			<Add directory="/home/Dev/libs/Irrlicht/lib/Linux" />
 		</Linker>
 		<Unit filename="libubox/uloop.c">

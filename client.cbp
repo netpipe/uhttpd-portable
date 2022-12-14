@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="eNet Client" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="Client" prefix_auto="0" extension_auto="0" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Option projectResourceIncludeDirsRelation="1" />
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="default;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-DHAVE_CGI" />
+			<Add directory="/home/Dev/libs/Irrlicht/include" />
+			<Add directory="../" />
+		</Compiler>
+		<Linker>
+			<Add library="crypt" />
+			<Add library="dl" />
+			<Add directory="/home/Dev/libs/Irrlicht/lib/Linux" />
+		</Linker>
+		<Unit filename="libubox/uloop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libubox/uloop.h" />
+		<Unit filename="libubox/usock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libubox/usock.h" />
+		<Unit filename="uhttpd-cgi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="uhttpd-cgi.h" />
+		<Unit filename="uhttpd-file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="uhttpd-file.h" />
+		<Unit filename="uhttpd-lua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="uhttpd-lua.h" />
+		<Unit filename="uhttpd-mimetypes.h" />
+		<Unit filename="uhttpd-tls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="uhttpd-tls.h" />
+		<Unit filename="uhttpd-ubus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="uhttpd-ubus.h" />
+		<Unit filename="uhttpd-utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="uhttpd-utils.h" />
+		<Unit filename="uhttpd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="uhttpd.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

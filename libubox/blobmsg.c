@@ -330,3 +330,4 @@ blobmsg_add_field(struct blob_buf *buf, int type, const char *name,
 
 	return 0;
 }
+

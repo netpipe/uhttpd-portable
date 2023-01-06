@@ -1191,33 +1191,34 @@ int main (int argc, char **argv)
 #endif
 
 #ifdef HAVE_UBUS
+void *lib;
 	/* load ubus plugin */
-	if (!(lib = dlopen("uhttpd_ubus.so", RTLD_LAZY | RTLD_GLOBAL)))
-	{
-		fprintf(stderr,
-				"Notice: Unable to load ubus plugin - disabling ubus support! "
-				"(Reason: %s)\n", dlerror());
-	}
-	else
-	{
-		/* resolve functions */
-		if (!(conf.ubus_init    = dlsym(lib, "uh_ubus_init"))    ||
-		    !(conf.ubus_close   = dlsym(lib, "uh_ubus_close"))   ||
-		    !(conf.ubus_request = dlsym(lib, "uh_ubus_request")))
-		{
-			fprintf(stderr,
-					"Error: Failed to lookup required symbols "
-					"in ubus plugin: %s\n", dlerror()
-			);
-			exit(1);
-		}
-
-		/* default ubus prefix */
-		if (!conf.ubus_prefix)
-			conf.ubus_prefix = "/ubus";
-
-		conf.ubus_state = conf.ubus_init(&conf);
-	}
+//	if (!(lib = dlopen("./uhttpd_ubus.so", RTLD_LAZY | RTLD_GLOBAL)))
+//	{
+//		fprintf(stderr,
+//				"Notice: Unable to load ubus plugin - disabling ubus support! "
+//				"(Reason: %s)\n", dlerror());
+//	}
+//	else
+//	{
+//		/* resolve functions */
+//		if (!(conf.ubus_init    = dlsym(lib, "uh_ubus_init"))    ||
+//		    !(conf.ubus_close   = dlsym(lib, "uh_ubus_close"))   ||
+//		    !(conf.ubus_request = dlsym(lib, "uh_ubus_request")))
+//		{
+//			fprintf(stderr,
+//					"Error: Failed to lookup required symbols "
+//					"in ubus plugin: %s\n", dlerror()
+//			);
+//			exit(1);
+//		}
+//
+//		/* default ubus prefix */
+//		if (!conf.ubus_prefix)
+//			conf.ubus_prefix = "/ubus";
+//
+//		conf.ubus_state = conf.ubus_init(&conf);
+//	}
 #endif
 
 	/* fork (if not disabled) */

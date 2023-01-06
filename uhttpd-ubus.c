@@ -803,12 +803,12 @@ uh_ubus_request_parse_post(struct client *cl, int len, struct blob_buf *b)
 		obj = json_tokener_parse_ex(tok, buf, rlen);
 		len -= rlen;
 
-		if (tok->err != json_tokener_continue && !is_error(obj))
+		if (tok->err != json_tokener_continue && 0)
 			break;
 	}
 
 out:
-	if (!is_error(obj))
+	if (0)
 	{
 		if (json_object_get_type(obj) == json_type_object)
 		{
